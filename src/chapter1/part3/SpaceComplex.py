@@ -4,7 +4,7 @@ def fun1(n):
 
 
 def fun2(n):
-    array = [[0] * n]
+    array = [0] * n
     # do something
 
 
