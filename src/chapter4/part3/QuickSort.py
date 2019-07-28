@@ -4,7 +4,7 @@ def quick_sort(start_index, end_index, array=[]):
     if start_index >= end_index:
         return
     # 得到基准元素位置
-    pivot_index = partition_v2(start_index, end_index, array)
+    pivot_index = partition_v1(start_index, end_index, array)
     # 根据基准元素，分成两部分递归排序
     quick_sort(start_index, pivot_index - 1, array)
     quick_sort(pivot_index + 1, end_index, array)
@@ -39,7 +39,7 @@ def partition_v2(start_index, end_index, array=[]):
     mark = start_index
     for i in range(start_index+1, end_index+1):
         if array[i] < pivot:
-            mark +=1
+            mark += 1
             p = array[mark]
             array[mark] = array[i]
             array[i] = p
