@@ -25,22 +25,22 @@ def get_greatest_common_divisor_v3(a, b):
     return get_greatest_common_divisor_v2(big-small, small)
 
 
-def gcb(a, b):
+def get_greatest_common_divisor_v4(a, b):
     if a == b:
         return a
     if (a & 1) == 0 and (b & 1) == 0:
-        return gcb(a >> 1, b >> 1) << 1
+        return get_greatest_common_divisor_v4(a >> 1, b >> 1) << 1
     elif (a & 1) == 0 and (b & 1) != 0:
-        return gcb(a >> 1, b)
+        return get_greatest_common_divisor_v4(a >> 1, b)
     elif (a & 1) != 0 and (b & 1) == 0:
-        return gcb(a, b >> 1)
+        return get_greatest_common_divisor_v4(a, b >> 1)
     else:
         big = max(a, b)
         small = min(a, b)
-        return gcb(big-small, small)
+        return get_greatest_common_divisor_v4(big - small, small)
 
 
 print(get_greatest_common_divisor(25, 5))
 print(get_greatest_common_divisor_v2(100, 75))
 print(get_greatest_common_divisor_v3(99, 55))
-print(gcb(100, 80))
+print(get_greatest_common_divisor_v4(100, 80))

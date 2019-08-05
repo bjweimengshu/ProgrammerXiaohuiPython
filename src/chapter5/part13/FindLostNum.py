@@ -7,7 +7,7 @@ def find_lost_num(array=[]):
         xor_result ^= array[i]
     # 如果异或结果为0，说明输入数组不符合题目
     if xor_result == 0:
-        return None
+        raise ValueError
     # 确定两个整数的不同位，以此来做分组
     separator = 1
     while 0 == (xor_result & separator):

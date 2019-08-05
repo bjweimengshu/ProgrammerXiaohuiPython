@@ -12,8 +12,7 @@ class LinkedList:
 
     def get(self, index):
         if index < 0 or index >= self.size:
-            print('超出链表节点范围！')
-            return
+            raise Exception("超出链表节点范围！")
         p = self.head
         for i in range(index):
             p = p.next
@@ -21,8 +20,7 @@ class LinkedList:
 
     def insert(self, data, index):
         if index < 0 or index > self.size:
-            print('超出链表节点范围！')
-            return
+            raise Exception("超出链表节点范围！")
         node = Node(data)
         if self.size == 0:
             # 空链表
@@ -35,7 +33,7 @@ class LinkedList:
         elif self.size == index:
             # 插入尾部
             self.last.next = node
-            self.last = node;
+            self.last = node
         else:
             # 插入中间
             prev_node = self.get(index-1)
@@ -45,8 +43,7 @@ class LinkedList:
 
     def remove(self, index):
         if index < 0 or index >= self.size:
-            print('超出链表节点范围！')
-            return
+            raise Exception("超出链表节点范围！")
         # 暂存被删除的节点，用于返回
         if index == 0:
             # 删除头节点

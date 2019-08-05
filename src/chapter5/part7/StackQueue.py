@@ -9,7 +9,7 @@ class StackQueue:
     def de_queue(self):
         if len(self.stackB) == 0:
             if len(self.stackA) == 0:
-                return None
+                raise Exception("栈已经空了 !")
             self.transfer()
         return self.stackB.pop()
 

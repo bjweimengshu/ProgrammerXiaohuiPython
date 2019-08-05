@@ -11,14 +11,14 @@ class MinStack:
 
     def pop(self):
         # 如果出栈元素和辅助栈栈顶元素值相等，辅助栈出栈
-        if self.mainStack[len(self.mainStack) - 1] == self.minStack[len(self.minStack) - 1]:
+        if self.mainStack[len(self.mainStack)-1] == self.minStack[len(self.minStack)-1]:
             self.minStack.pop()
         return self.mainStack.pop()
 
     def get_min(self):
         if len(self.mainStack) == 0:
             return None
-        return self.minStack[len(self.minStack) - 1]
+        return self.minStack[len(self.minStack)-1]
 
 
 myStack = MinStack()

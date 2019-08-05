@@ -4,7 +4,6 @@ def find_nearest_number(numbers=[]):
     # 如果数字置换边界是0，说明整个数组已经逆序，无法得到更大的相同数字组成的整数，返回null
     if index == 0:
         return None
-
     # 2.把逆序区域的前一位和逆序区域中刚刚大于它的数字交换位置
     # 拷贝入参，避免直接修改入参
     numbers_copy = numbers.copy()

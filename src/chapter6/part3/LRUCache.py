@@ -35,7 +35,7 @@ class LRUCache:
     def refresh_node(self, node):
         # 如果访问的是尾节点，无需移动节点
         if node == self.end:
-            return;
+            return
         # 移除节点
         self.remove_node(node);
         # 重新插入节点

@@ -5,13 +5,13 @@ class MyBitmap:
 
     def get_bit(self, bit_index):
         if bit_index < 0 or bit_index > self.size-1:
-            return None
+            raise Exception("超过bitmap有效范围 !")
         word_index = self.get_word_index(bit_index)
         return (self.words[word_index] & (1 << bit_index)) != 0
 
     def set_bit(self, bit_index):
         if bit_index < 0 or bit_index > self.size-1:
-            return None
+            raise Exception("超过bitmap有效范围 !")
         word_index = self.get_word_index(bit_index)
         self.words[word_index] |= (1 << bit_index)
 

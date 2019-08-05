@@ -11,8 +11,7 @@ class PriorityQueue:
 
     def dequeue(self):
         if self.size < 0:
-            print("队列为空！")
-            return None
+            raise Exception("队列为空 !")
         head = self.array[0]
         self.array[0] = self.array[self.size-1]
         self.size -= 1

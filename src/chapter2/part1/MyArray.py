@@ -7,7 +7,7 @@ class MyArray:
     def insert(self, index, element):
         # 判断访问下标是否超出范围
         if index < 0 or index > self.size:
-            print("超出列表实际元素范围！")
+            raise Exception("超出数组实际元素范围！")
         # 从右向左循环，逐个元素向右挪一位。
         for i in range(self.size-1, -1, -1):
             self.array[i+1] = self.array[i]
@@ -18,7 +18,7 @@ class MyArray:
     def insert_v2(self, index, element):
         # 判断访问下标是否超出范围
         if index < 0 or index > self.size:
-            print("超出列表实际元素范围！")
+            raise Exception("超出数组实际元素范围！")
         # 如果实际元素达到数组容量上线，数组扩容
         if self.size >= len(self.array):
             self.resize()
@@ -39,7 +39,7 @@ class MyArray:
     def remove(self, index):
         # 判断访问下标是否超出范围
         if index < 0 or index >= self.size:
-            print("超出列表实际元素范围！")
+            raise Exception("超出数组实际元素范围！")
         # 从左到右，逐个元素向左挪动一位
         for i in range(index, self.size):
             self.array[i] = self.array[i+1]

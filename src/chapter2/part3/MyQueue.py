@@ -7,15 +7,13 @@ class MyQueue:
 
     def enqueue(self, element):
         if (self.rear+1) % len(self.list) == self.front:
-            print('队列已满！')
-            return
+            raise Exception("队列已满 !")
         self.list[self.rear] = element
         self.rear = (self.rear+1) % len(self.list)
 
     def dequeue(self):
         if self.rear == self.front:
-            print('队列为空！')
-            return
+            raise Exception("队列为空 !")
         dequeue_element = self.list[self.front]
         self.front = (self.front+1) % len(self.list)
         return dequeue_element
