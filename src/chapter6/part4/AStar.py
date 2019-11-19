@@ -1,5 +1,7 @@
 def a_star_search(start, end):
+    # 待访问的格子
     open_list = []
+    # 已访问的格子
     close_list = []
     # 把起点加入open_list
     open_list.append(start)

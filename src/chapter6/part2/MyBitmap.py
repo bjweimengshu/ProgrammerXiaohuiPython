@@ -20,9 +20,9 @@ class MyBitmap:
         return bit_index >> 6
 
 
-bitMap = MyBitmap(128)
-bitMap.set_bit(126)
-bitMap.set_bit(75)
+bitMap = MyBitmap(21474836470)
+bitMap.set_bit(78)
+bitMap.set_bit(50)
 print(bitMap.get_bit(126))
 print(bitMap.get_bit(78))
 

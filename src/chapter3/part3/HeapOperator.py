@@ -1,5 +1,9 @@
 
 def up_adjust(array=[]):
+    """
+    二叉堆的尾节点上浮操作
+    :param array: 原数组
+    """
     child_index = len(array) - 1
     parent_index = (child_index - 1) // 2
     # temp保存插入的叶子节点值，用于最后的赋值
@@ -13,6 +17,12 @@ def up_adjust(array=[]):
 
 
 def down_adjust(parent_index, length, array=[]):
+    """
+    二叉堆的节点下沉操作
+    :param parent_index: 待下沉的节点下标
+    :param length: 堆的长度范围
+    :param array: 原数组
+    """
     # temp保存父节点值，用于最后的赋值
     temp = array[parent_index]
     child_index = 2 * parent_index + 1
@@ -31,6 +41,10 @@ def down_adjust(parent_index, length, array=[]):
 
 
 def build_heap(array=[]):
+    """
+    二叉堆的构建操作
+    :param array: 原数组
+    """
     # 从最后一个非叶子节点开始，依次下沉调整
     for i in range((len(array)-2) // 2, -1, -1):
         down_adjust(i, len(array), array)

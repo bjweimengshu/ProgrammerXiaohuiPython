@@ -1,4 +1,11 @@
 def get_best_gold_mining(w, n, p=[], g=[]):
+    """
+    :param w: 工人数量
+    :param n: 可选金矿数量
+    :param p: 金矿开采所需工人数量
+    :param g: 金矿储量
+    :return: 最优收益
+    """
     if w == 0 or n == 0:
         return 0
     if w < p[n-1]:
@@ -7,6 +14,12 @@ def get_best_gold_mining(w, n, p=[], g=[]):
 
 
 def get_best_gold_mining_v2(w, p=[], g=[]):
+    """
+    :param w: 工人数量
+    :param p: 金矿开采所需工人数量
+    :param g: 金矿储量
+    :return: 最优收益
+    """
     result_table = [[0 for i in range(w+1)] for i in range(len(g)+1)]
     # 填充表格
     for i in range(1, len(g)+1):
@@ -20,6 +33,12 @@ def get_best_gold_mining_v2(w, p=[], g=[]):
 
 
 def get_best_gold_mining_v3(w, p=[], g=[]):
+    """
+    :param w: 工人数量
+    :param p: 金矿开采所需工人数量
+    :param g: 金矿储量
+    :return: 最优收益
+    """
     # 创建当前结果
     results = [0]*(w+1)
     # 填充一维数组

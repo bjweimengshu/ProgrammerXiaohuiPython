@@ -21,7 +21,7 @@ def bucket_sort(array=[]):
         bucket.append(array[i])
     # 4.对每个桶内部进行排序
     for i in range(0, len(bucket_list)):
-        # list采用了归并排序或归并的优化版本
+        # sort方法采用了时间复杂度O(nlogn)的排序算法
         bucket_list[i].sort()
     # 5.输出全部元素
     sorted_array = []

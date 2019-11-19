@@ -8,6 +8,10 @@ class TreeNode:
 
 
 def create_binary_tree(input_list=[]):
+    """
+    构建二叉树
+    :param input_list: 输入数列
+    """
     if input_list is None or len(input_list) == 0:
         return None
     data = input_list.pop(0)
@@ -20,6 +24,10 @@ def create_binary_tree(input_list=[]):
 
 
 def pre_order_traversal(node):
+    """
+    前序遍历
+    :param node: 二叉树节点
+    """
     if node is None:
         return
     print(node.data)
@@ -29,6 +37,10 @@ def pre_order_traversal(node):
 
 
 def in_order_traversal(node):
+    """
+    中序遍历
+    :param node: 二叉树节点
+    """
     if node is None:
         return
     in_order_traversal(node.left)
@@ -38,6 +50,10 @@ def in_order_traversal(node):
 
 
 def post_order_traversal(node):
+    """
+    后序遍历
+    :param node: 二叉树节点
+    """
     if node is None:
         return
     post_order_traversal(node.left)

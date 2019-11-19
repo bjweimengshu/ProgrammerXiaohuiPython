@@ -28,18 +28,18 @@ class LRUCache:
             self.refresh_node(node)
 
     def remove(self, key):
-        node = self.hash.get(key);
-        self.remove_node(node);
-        self.hash.remove(key);
+        node = self.hash.get(key)
+        self.remove_node(node)
+        self.hash.remove(key)
 
     def refresh_node(self, node):
         # 如果访问的是尾节点，无需移动节点
         if node == self.end:
             return
         # 移除节点
-        self.remove_node(node);
+        self.remove_node(node)
         # 重新插入节点
-        self.add_node(node);
+        self.add_node(node)
 
     def remove_node(self, node):
         if node == self.head and node == self.end:
