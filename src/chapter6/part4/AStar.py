@@ -16,10 +16,9 @@ def a_star_search(start, end):
         # 找到所有邻近节点
         neighbors = find_neighbors(current_grid, open_list, close_list)
         for grid in neighbors:
-            if grid not in open_list:
-                # 邻近节点不在openList中，标记父亲、G、H、F，并放入openList
-                grid.init_grid(current_grid, end)
-                open_list.append(grid)
+            # 邻近节点不在openList中，标记父亲、G、H、F，并放入openList
+            grid.init_grid(current_grid, end)
+            open_list.append(grid)
         # 如果终点在openList中，直接返回终点格子
         for grid in open_list:
             if (grid.x == end.x) and (grid.y == end.y):
@@ -83,10 +82,7 @@ class Grid:
 
     def init_grid(self, parent, end):
         self.parent = parent
-        if parent is not None:
-            self.g = parent.g + 1
-        else:
-            self.g = 1
+        self.g = parent.g + 1
         self.h = abs(self.x - end.x) + abs(self.y - end.y)
         self.f = self.g + self.h
 
