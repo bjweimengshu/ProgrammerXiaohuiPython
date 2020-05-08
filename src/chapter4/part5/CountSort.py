@@ -33,7 +33,7 @@ def count_sort_v2(array=[]):
     for i in range(0, len(array)):
         count_array[array[i]-min_value] += 1
     # 3.统计数组做变形，后面的元素等于前面的元素之和
-    for i in range(1, len(array)):
+    for i in range(1, len(count_array)):
         count_array[i] += count_array[i-1]
     # 4.倒序遍历原始数列，从统计数组找到正确位置，输出到结果数组
     sorted_array = [0] * len(array)
@@ -45,6 +45,6 @@ def count_sort_v2(array=[]):
 
 my_array = list([4, 4, 6, 5, 3, 2, 8, 1, 7, 5, 6, 0, 10])
 print(count_sort(my_array))
-my_array = list([95, 94, 91, 98, 99, 90, 99, 93, 91, 92])
+my_array = list([95, 94, 91, 120, 90, 99, 93, 91, 92])
 print(count_sort_v2(my_array))
 
