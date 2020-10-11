@@ -44,14 +44,12 @@ def remove_k_digits_v2(num, k):
         # 遍历到的当前数字入栈
         stack.append(c)
     # 用栈构建新的整数字符串
-    if new_length <= 0:
-        return "0"
-    return "".join(stack)
+    return "".join(stack[:new_length])
 
 
-print(remove_k_digits("1593212", 3))
-print(remove_k_digits("30200", 1))
-print(remove_k_digits("10", 2))
-print(remove_k_digits("541270936", 3))
-print(remove_k_digits("1593212", 4))
-print(remove_k_digits("10000100002", 2))
+print(remove_k_digits_v2("123456789", 3))
+print(remove_k_digits_v2("30200", 1))
+print(remove_k_digits_v2("10", 2))
+print(remove_k_digits_v2("541270936", 3))
+print(remove_k_digits_v2("1593212", 4))
+print(remove_k_digits_v2("10000100002", 2))
