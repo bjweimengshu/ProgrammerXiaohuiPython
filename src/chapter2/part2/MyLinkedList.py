@@ -49,6 +49,8 @@ class LinkedList:
             # 删除头节点
             removed_node = self.head
             self.head = self.head.next
+            if self.size == 1:
+                self.last == Node
         elif index == self.size - 1:
             # 删除尾节点
             prev_node = self.get(index-1)
