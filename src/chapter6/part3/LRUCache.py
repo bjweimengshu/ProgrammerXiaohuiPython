@@ -32,7 +32,7 @@ class LRUCache:
         if node is None:
             return
         self.remove_node(node)
-        self.hash.remove(key)
+        self.hash.pop(key)
 
     def refresh_node(self, node):
         # 如果访问的是尾节点，无需移动节点
@@ -91,7 +91,7 @@ lruCache.put("004", "用户4信息更新")
 lruCache.put("006", "用户6信息")
 print(lruCache.get("001"))
 print(lruCache.get("006"))
-
+lruCache.remove("006")
 
 
 
